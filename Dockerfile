@@ -24,19 +24,10 @@ RUN tar xvzf FreeLing-4.1.tar.gz && \
 
 ENV LD_LIBRARY_PATH = ${FLINSTALL}/lib/
 ENV FREELINGDIR = ${FLINSTALL}
-
-RUN rm -rf ${FLINSTALL}/FreeLing-4.1/de
-RUN rm -rf ${FLINSTALL}/FreeLing-4.1/fr
-RUN rm -rf ${FLINSTALL}/FreeLing-4.1/ru
-RUN rm -rf ${FLINSTALL}/FreeLing-4.1/sl
-RUN rm -rf ${FLINSTALL}/FreeLing-4.1/hr
-RUN rm -rf ${FLINSTALL}/FreeLing-4.1/gl
-RUN rm -rf ${FLINSTALL}/FreeLing-4.1/nb
-RUN rm -rf ${FLINSTALL}/FreeLing-4.1/pt
-RUN rm -rf ${FLINSTALL}/FreeLing-4.1/cs
-RUN rm -rf ${FLINSTALL}/FreeLing-4.1/as
-RUN rm -rf ${FLINSTALL}/FreeLing-4.1/ca
-
+RUN chmod +x /deleteOtherLanguages.sh
+WORKDIR /root
+ADD deleteOtherLanguages.sh /root/deleteOtherLanguages.sh
+ENTRYPOINT  "./deleteOtherLanguages"
 WORKDIR /usr/local/FreeLing-4.1/APIs/python3/
 EXPOSE 50005
 CMD echo 'Hello world' | python3 sample.py
