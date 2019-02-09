@@ -24,9 +24,9 @@ RUN tar xvzf FreeLing-4.1.tar.gz && \
 
 ENV LD_LIBRARY_PATH = ${FLINSTALL}/lib/
 ENV FREELINGDIR = ${FLINSTALL}
-RUN chmod +x /deleteOtherLanguages.sh
 WORKDIR /root
 ADD deleteOtherLanguages.sh /root/deleteOtherLanguages.sh
+RUN chmod +x /deleteOtherLanguages.sh
 ENTRYPOINT  "./deleteOtherLanguages"
 WORKDIR /usr/local/FreeLing-4.1/APIs/python3/
 EXPOSE 50005
