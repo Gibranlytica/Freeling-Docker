@@ -26,7 +26,7 @@ ENV LD_LIBRARY_PATH = ${FLINSTALL}/lib/
 ENV FREELINGDIR = ${FLINSTALL}
 COPY deleteOtherLanguages.sh /root/deleteOtherLanguages.sh
 RUN chmod +x /root/deleteOtherLanguages.sh
-RUN  bash /root/deleteOtherLanguages
+RUN  ./root/deleteOtherLanguages.sh
 WORKDIR /usr/local/FreeLing-4.1/APIs/python3/
 EXPOSE 50005
 CMD echo 'Hello world' | python3 sample.py
