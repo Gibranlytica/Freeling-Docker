@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 declare -a arr=("ca" "as" "cs" "pt" "nb"
                 "gl" "hr" "sl" "ru" "fr"
                 "de")
