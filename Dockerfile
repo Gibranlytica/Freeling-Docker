@@ -28,6 +28,6 @@ ENV FREELINGDIR ${FLINSTALL}
 #ARG secondary_lang
 #ls -d /usr/local/share/freeling/?? | grep -v ${lang} | xargs rm -rf 
 #RUN ls -d /usr/local/share/freeling/??
-#EXPOSE 50005/tcp
-#EXPOSE 50005/udp
-#ENTRYPOINT [ "/usr/local/bin/analyze", "-f", "it.cfg", "--server" "--port", "50005", "&" ] 
+EXPOSE 50005/tcp
+EXPOSE 50005/udp
+CMD [ "/usr/local/bin/analyze", "-f", "it.cfg", "--server" "--port", "50005", "&" ] 
