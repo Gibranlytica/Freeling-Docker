@@ -30,4 +30,4 @@ ENV FREELINGDIR ${FLINSTALL}
 #RUN ls -d /usr/local/share/freeling/??
 EXPOSE 50005/tcp
 EXPOSE 50005/udp
-CMD [ "/usr/local/bin/analyze", "-f", "it.cfg", "--server" "--port", "50005", "&" ] 
+CMD analyze -f it.cfg en.cfg --server --port 50005 --output json & 
