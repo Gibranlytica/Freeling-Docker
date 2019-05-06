@@ -26,7 +26,11 @@ ENV LD_LIBRARY_PATH /usr/local/lib:${LD_LIBRARY_PATH}
 ENV FREELINGDIR ${FLINSTALL}
 #ARG primary_lang
 #ARG secondary_lang
-#ls -d /usr/local/share/freeling/?? | grep -v ${lang} | xargs rm -rf 
+RUN ls -d /usr/local/share/freeling/?? | grep -v "it" | grep -v "en" | xargs rm -rf 
+RUN apt-get --purge -y remove build-essential libicu-dev \
+            libboost-regex-dev \
+            libboost-program-options-dev libboost-thread-dev zlib1g-dev\
+            automake autoconf libtool wget
 #RUN ls -d /usr/local/share/freeling/??
 EXPOSE 50005/tcp
 EXPOSE 50005/udp
