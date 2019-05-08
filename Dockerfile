@@ -32,7 +32,4 @@ RUN apt-get --purge -y remove build-essential libicu-dev \
             libboost-regex-dev \
             libboost-program-options-dev libboost-thread-dev zlib1g-dev\
             automake autoconf libtool wget
-#RUN ls -d /usr/local/share/freeling/??
-EXPOSE 50005/tcp
-EXPOSE 50005/udp
 CMD analyze -f it.cfg en.cfg --server --port 50005 --output json & 
